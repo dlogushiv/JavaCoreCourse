@@ -167,7 +167,7 @@ public class HomeWork2_1 {
         System.out.println("I-7. Second largest element of array: " + secondLargest(setOfNumbers) + ".");
 
 
-        double[] setOfNumbersD = {-30, -50, -10, -90, -120, -70, -5, -1, -15, -8};
+        double[] setOfNumbersD = {-15.26, 50.36, -5.48795, -1.3687, -888.974, -6.957, -68.65741, -987.672, -3.65, -8.453};
 
         System.out.println("\nD-1. Sum of the array elements: " + sum(setOfNumbersD) + ".");
         System.out.println("D-2. Minimal element of array: " + min(setOfNumbersD) + ".");

@@ -32,12 +32,18 @@ public class HomeWork2_1 {
 
     static int maxPositive(int[] array) {
         int maxPositive = 0;
+        boolean flag = false;
         for (int element : array) {
             if (element > 0 && element >= maxPositive) {
                 maxPositive = element;
+                flag = true;
             }
         }
-        return maxPositive;
+        if (flag) {
+            return maxPositive;
+        } else {
+            return -1;
+        }
     }
 
     static long multiplication(int[] array) {
@@ -49,8 +55,7 @@ public class HomeWork2_1 {
     }
 
     static int modulus(int[] array) {
-        int mod = array[0] % array[array.length - 1];
-        return mod;
+        return array[0] % array[array.length - 1];
     }
 
     static int secondLargest(int[] array) {
@@ -101,12 +106,18 @@ public class HomeWork2_1 {
 
     static double maxPositive(double[] array) {
         double maxPositive = 0;
+        boolean flag = false;
         for (double element : array) {
             if (element > 0 && element >= maxPositive) {
                 maxPositive = element;
+                flag = true;
             }
         }
-        return maxPositive;
+        if (flag) {
+            return maxPositive;
+        } else {
+            return -1;
+        }
     }
 
     static double multiplication(double[] array) {
@@ -118,8 +129,7 @@ public class HomeWork2_1 {
     }
 
     static double modulus(double[] array) {
-        double mod = array[0] % array[array.length - 1];
-        return mod;
+        return array[0] % array[array.length - 1];
     }
 
     static double secondLargest(double[] array) {
@@ -141,23 +151,33 @@ public class HomeWork2_1 {
     }
 
     public static void main(String[] args) {
-        int[] setOfNumbers = {-30, 50, 10, -90, -120, -70, -5, -1, -15, 8};
+        int[] setOfNumbers = {-30, -50, -10, -90, -120, -70, -5, -1, -15, -8};
 
         System.out.println("I-1. Sum of the array elements: " + sum(setOfNumbers) + ".");
         System.out.println("I-2. Minimal element of array: " + min(setOfNumbers) + ".");
         System.out.println("I-3. Maximal element of array: " + max(setOfNumbers) + ".");
-        System.out.println("I-4. Maximal positive element of array: " + maxPositive(setOfNumbers) + ".");
+        System.out.print("I-4. Maximal positive element of array: ");
+        if (maxPositive(setOfNumbers) != -1) {
+            System.out.println(maxPositive(setOfNumbers) + ".");
+        } else {
+            System.out.println("All elements in array are negative!");
+        }
         System.out.println("I-5. Multiplication of the array elements: " + multiplication(setOfNumbers) + ".");
         System.out.println("I-6. Modulus of first and last elements of array: " + modulus(setOfNumbers) + ".");
         System.out.println("I-7. Second largest element of array: " + secondLargest(setOfNumbers) + ".");
 
 
-        double[] setOfNumbersD = {-30, 50, 10, -90, -120, -70, -5, -1, -15, 8};
+        double[] setOfNumbersD = {-30, -50, -10, -90, -120, -70, -5, -1, -15, -8};
 
         System.out.println("\nD-1. Sum of the array elements: " + sum(setOfNumbersD) + ".");
         System.out.println("D-2. Minimal element of array: " + min(setOfNumbersD) + ".");
         System.out.println("D-3. Maximal element of array: " + max(setOfNumbersD) + ".");
-        System.out.println("D-4. Maximal positive element of array: " + maxPositive(setOfNumbersD) + ".");
+        System.out.print("D-4. Maximal positive element of array: ");
+        if (maxPositive(setOfNumbersD) != -1) {
+            System.out.println(maxPositive(setOfNumbersD) + ".");
+        } else {
+            System.out.println("All elements in array are negative!");
+        }
         System.out.println("D-5. Multiplication of the array elements: " + multiplication(setOfNumbersD) + ".");
         System.out.println("D-6. Modulus of first and last elements of array: " + modulus(setOfNumbersD) + ".");
         System.out.println("D-7. Second largest element of array: " + secondLargest(setOfNumbersD) + ".");

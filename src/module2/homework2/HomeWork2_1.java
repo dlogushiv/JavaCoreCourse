@@ -61,7 +61,9 @@ public class HomeWork2_1 {
     static int secondLargest(int[] array) {
         boolean ind = true; // indicator of sorting
         int t;              // temp variable for min between two elements
+        int secondMax=0;
 
+        // bubble sort
         while (ind) {
             ind = false;
             for (int i = 0; i < array.length - 1; i++) {
@@ -73,7 +75,13 @@ public class HomeWork2_1 {
                 }
             }
         }
-        return array[array.length - 2];
+        for (int i = array.length - 1; i > 0; i--) {
+            if (array[i-1] < array[i]) {
+                secondMax = array[i - 1];
+                break;
+            }
+        }
+        return secondMax;
     }
 
     static double sum(double[] array) {
@@ -135,7 +143,9 @@ public class HomeWork2_1 {
     static double secondLargest(double[] array) {
         boolean ind = true; // indicator of sorting
         double t;              // temp variable for min between two elements
+        double secondMax=0;
 
+        // bubble sort
         while (ind) {
             ind = false;
             for (int i = 0; i < array.length - 1; i++) {
@@ -147,11 +157,17 @@ public class HomeWork2_1 {
                 }
             }
         }
-        return array[array.length - 2];
+        for (int i = array.length - 1; i > 0; i--) {
+            if (array[i-1] < array[i]) {
+                secondMax = array[i - 1];
+                break;
+            }
+        }
+        return secondMax;
     }
 
     public static void main(String[] args) {
-        int[] setOfNumbers = {-30, -50, -10, -90, -120, -70, -5, -1, -15, -8};
+        int[] setOfNumbers = {120, 120, 120, 120, 120, 100, 120, 120, -15, -8};
 
         System.out.println("I-1. Sum of the array elements: " + sum(setOfNumbers) + ".");
         System.out.println("I-2. Minimal element of array: " + min(setOfNumbers) + ".");
@@ -167,7 +183,7 @@ public class HomeWork2_1 {
         System.out.println("I-7. Second largest element of array: " + secondLargest(setOfNumbers) + ".");
 
 
-        double[] setOfNumbersD = {-15.26, 50.36, -5.48795, -1.3687, -888.974, -6.957, -68.65741, -987.672, -3.65, -8.453};
+        double[] setOfNumbersD = {50.36, 50.36, -5.48795, 50.36, -888.974, 6.957, -68.65741, -987.672, -3.65, -8.453};
 
         System.out.println("\nD-1. Sum of the array elements: " + sum(setOfNumbersD) + ".");
         System.out.println("D-2. Minimal element of array: " + min(setOfNumbersD) + ".");

@@ -3,27 +3,26 @@ package module3.homework3.task4;
 //        + Create User class with the following fields: String name, int balance, int monthsOfEmployment, String companyName, int salary, String currency.
 //        + Create getters and setters and constructor with all fields.
 //        Write methods:
-//            void paySalary() -  that add salary to the balance of the user
-//            withdraw(int summ) - takes money from the balance with 5% commision if summ < 1000 and 10% commision in other cases
-//            companyNameLength - calculates length of the company name
-//            monthIncreaser(int addMonth) - increase monthsOfEmployment by addMonth
+//            + void paySalary() -  that add salary to the balance of the user
+//            + withdraw(int summ) - takes money from the balance with 5% commision if summ < 1000 and 10% commision in other cases
+//            + companyNameLength - calculates length of the company name
+//            + monthIncreaser(int addMonth) - increase monthsOfEmployment by addMonth
 
 public class User {
     private String name;
-    private int balance;
+    private double balance;
     private int monthsOfEmployment;
     private String companyName;
     private String currency;
     private int salary;
 
-
-    public User(String name, int balance, int monthsOfEmployment, String companyName, int salary, String currency) {
+    public User(String name, double balance, int monthsOfEmployment, String companyName, String currency, int salary) {
         this.name = name;
         this.balance = balance;
         this.monthsOfEmployment = monthsOfEmployment;
         this.companyName = companyName;
-        this.salary = salary;
         this.currency = currency;
+        this.salary = salary;
     }
 
     public String getName() {
@@ -34,11 +33,11 @@ public class User {
         this.name = name;
     }
 
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 
@@ -74,8 +73,34 @@ public class User {
         this.currency = currency;
     }
 
-    public void paySalary(User name, int salary){
-        int balance = this.getBalance();
-        this.setBalance(balance+=salary);
+    public void paySalary() {
+        double balance = getBalance();
+        setBalance(balance += salary);
+    }
+
+    public double withdraw(int summ) {
+        double commission = 0;
+        double withdrawPlusCommission = 0;
+        if (summ < 1000) {
+            commission = 0.05;
+        } else {
+            commission = 0.1;
+        }
+        withdrawPlusCommission = summ + summ * commission;
+        if (getBalance() < withdrawPlusCommission) {
+            return -1;
+        } else {
+            setBalance(getBalance() - withdrawPlusCommission);
+            return getBalance() - withdrawPlusCommission;
+        }
+    }
+
+    public int companyNameLength(User name) {
+        return name.getCompanyName().length();
+    }
+
+    public void monthIncreaser(int addMonth) {
+        setMonthsOfEmployment(getMonthsOfEmployment() + addMonth);
     }
 }
+

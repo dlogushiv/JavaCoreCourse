@@ -91,12 +91,12 @@ public class User {
             return -1;
         } else {
             setBalance(getBalance() - withdrawPlusCommission);
-            return getBalance() - withdrawPlusCommission;
+            return withdrawPlusCommission;
         }
     }
 
-    public int companyNameLength(User name) {
-        return name.getCompanyName().length();
+    public int companyNameLength() {
+        return getCompanyName().length();
     }
 
     public void monthIncreaser(int addMonth) {

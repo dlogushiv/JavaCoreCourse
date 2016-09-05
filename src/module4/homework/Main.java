@@ -5,6 +5,8 @@ public class Main {
         USBank usBank = new USBank(123, "USA", Currency.USD, 50, 3000, 25, 56_000_000L);
         EUBank euBank = new EUBank(456, "France", Currency.EUR, 100, 4000, 10, 150_000_000L);
         ChinaBank chinaBank = new ChinaBank(789, "China", Currency.USD, 300, 1000, 80, 200_000_000L);
+
+        User user1 = new User(1,"Vanya", 1000,74,"Microny Plant LTD", 350, euBank);
         int withdraw = 1001;
 
         System.out.println("The limit of withdraw in usBank is " + usBank.getLimitOfWithdrawal() + " " + usBank.getCurrency());
@@ -22,5 +24,6 @@ public class Main {
         System.out.println("The monthly rate in chinaBank is " + chinaBank.getMonthlyRate() * 100 + "%");
         System.out.println("The commission of withdraw " + withdraw + " " + chinaBank.getCurrency() + " in chinaBank will be " + chinaBank.getCommission(withdraw) + " " + chinaBank.getCurrency());
 
+        System.out.println(user1);
     }
 }

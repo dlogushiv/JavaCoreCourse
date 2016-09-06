@@ -18,10 +18,10 @@ public class EUBank extends Bank{
 
     @Override
     public int getLimitOfFunding() {
-        if (getCurrency() == Currency.EUR) {
-            return 20000;
-        } else {
+        if (getCurrency() == Currency.USD) {
             return 10000;
+        } else {
+            return 20000;
         }
     }
 

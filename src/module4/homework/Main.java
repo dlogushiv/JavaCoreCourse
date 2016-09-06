@@ -15,7 +15,7 @@ public class Main {
         EUBank euBank = new EUBank(456, "France", Currency.EUR, 100, 4000, 10, 150_000_000L);
         ChinaBank chinaBank = new ChinaBank(789, "China", Currency.USD, 300, 1000, 80, 200_000_000L);
 
-        User user1 = new User(1, "Vanya", 1000, 74, "Microny Plant LTD", 350, euBank);
+        User user1 = new User(1, "Vanya", 3000, 74, "Microny Plant LTD", 350, euBank);
         User user2 = new User(2, "Petya", 2000, 5, "Sho Popalo Company", 500, euBank);
         User user3 = new User(3, "Kolya", 1500, 10, "Ciclum", 400, usBank);
         User user4 = new User(4, "Masha", 2500, 12, "Luxoft", 600, usBank);
@@ -40,9 +40,9 @@ public class Main {
 //        System.out.println("The commission of withdraw " + withdraw + " " + chinaBank.getCurrency() + " in chinaBank will be " + chinaBank.getCommission(withdraw) + " " + chinaBank.getCurrency());
 //
 //        System.out.println("User1 Start balance: " + user1.getBalance());
-//        bankSystem.withdrawOfUser(user1, 100);
+//        bankSystem.withdrawOfUser(user1, 2300);
 //        System.out.println("User1 Balance after withdraw: " + user1.getBalance());
-//        bankSystem.fundUser(user1, 300);
+//        bankSystem.fundUser(user1, 21000);
 //        System.out.println("User1 Balance after fund: " + user1.getBalance());
 //        System.out.println("User2 Start balance: " + user2.getBalance());
 //        bankSystem.transferMoney(user2, user1, 100);

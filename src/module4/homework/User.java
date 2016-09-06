@@ -8,6 +8,7 @@ public class User {
     private String companyName;
     private int salary;
     private Bank bank;
+    private boolean flag = true;
 
     public User(long id, String name, double balance, int monthsOfEmployment, String companyName, int salary, Bank bank) {
         this.id = id;
@@ -75,16 +76,24 @@ public class User {
         this.bank = bank;
     }
 
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
+
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", balance=" + balance +
-                ", monthsOfEmployment=" + monthsOfEmployment +
-                ", companyName='" + companyName + '\'' +
-                ", salary=" + salary +
-                ", \nbank=" + bank +
-                '}';
+        if (this.flag) {
+            return "User{" +
+                    "id=" + id +
+                    ", name='" + name + '\'' +
+                    ", balance=" + balance +
+                    ", monthsOfEmployment=" + monthsOfEmployment +
+                    ", companyName='" + companyName + '\'' +
+                    ", salary=" + salary +
+                    ", \nbank=" + bank +
+                    '}';
+        } else {
+            return "User" + id + ", " + name + ", balance= " + balance + ".";
+        }
     }
 }

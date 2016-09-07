@@ -16,10 +16,10 @@ public class ChinaBank extends Bank {
 
     @Override
     public int getLimitOfFunding() {
-        if (getCurrency() == Currency.EUR) {
-            return 5000;
+        if (getCurrency() == Currency.USD) {
+            return 10000;
         } else {
-            return 1000;
+            return 5000;
         }
     }
 

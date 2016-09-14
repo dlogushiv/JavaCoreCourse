@@ -6,7 +6,7 @@ public class TripAdvisorAPI implements API {
     Room[] rooms = new Room[5];
 
     public TripAdvisorAPI() {
-        rooms[0] = new Room(2011L, 310, 2, new Date(), "FunnyHolidays", "Stambul");
+        rooms[0] = new Room(2011L, 300, 2, new Date(), "FunnyHolidays", "Stambul");
         rooms[1] = new Room(2012L, 450, 3, new Date(), "SunClub", "Rome");
         rooms[2] = new Room(2013L, 180, 2, new Date(), "YellowSand", "Odessa");
         rooms[3] = new Room(2014L, 500, 3, new Date(), "FunnyHolidays", "Stambul");
@@ -18,7 +18,7 @@ public class TripAdvisorAPI implements API {
         Room[] outRooms = new Room[rooms.length];
         int k = 0;
         for (int i = 0; i < rooms.length; i++) {
-            if (new Room(1, price, persons, new Date(), hotel, city).equals(rooms[i])) {
+            if (rooms[i].getPrice() == price && rooms[i].getPersons() == persons && rooms[i].getCityName() == city && rooms[i].getHotelName() == hotel) {
                 outRooms[k] = rooms[i];
                 k++;
             }

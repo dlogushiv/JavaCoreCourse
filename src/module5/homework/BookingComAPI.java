@@ -9,7 +9,7 @@ public class BookingComAPI implements API {
         rooms[0] = new Room(231L, 300, 2, new Date(), "FunnyHolidays", "Stambul");
         rooms[1] = new Room(232L, 450, 3, new Date(), "SunClub", "Rome");
         rooms[2] = new Room(233L, 180, 2, new Date(), "YellowSand", "Odessa");
-        rooms[3] = new Room(234L, 500, 3, new Date(), "FunnyHolidays", "Stambul");
+        rooms[3] = new Room(234L, 300, 3, new Date(), "FunnyHolidays", "Stambul");
         rooms[4] = new Room(235L, 300, 2, new Date(), "ShoPopaloResort", "Stambul");
     }
 
@@ -18,7 +18,7 @@ public class BookingComAPI implements API {
         Room[] outRooms = new Room[rooms.length];
         int k = 0;
         for (int i = 0; i < rooms.length; i++) {
-            if (new Room(1, price, persons, new Date(), hotel, city).equals(rooms[i])) {
+            if (rooms[i].getPrice() == price && rooms[i].getPersons() == persons && rooms[i].getCityName() == city && rooms[i].getHotelName() == hotel) {
                 outRooms[k] = rooms[i];
                 k++;
             }

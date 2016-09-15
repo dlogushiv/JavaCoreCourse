@@ -6,11 +6,11 @@ public class TripAdvisorAPI implements API {
     Room[] rooms = new Room[5];
 
     public TripAdvisorAPI() {
-        rooms[0] = new Room(2011L, 300, 2, new Date(), "FunnyHolidays", "Stambul");
-        rooms[1] = new Room(2012L, 450, 3, new Date(), "SunClub", "Rome");
-        rooms[2] = new Room(2013L, 180, 2, new Date(), "YellowSand", "Odessa");
-        rooms[3] = new Room(2014L, 500, 3, new Date(), "FunnyHolidays", "Stambul");
-        rooms[4] = new Room(2015L, 300, 2, new Date(), "ShoPopaloResort", "Stambul");
+        rooms[0] = new Room(21L, 300, 2, new Date(), "FunnyHolidays", "Stambul");
+        rooms[1] = new Room(22L, 450, 3, new Date(), "SunClub", "Rome");
+        rooms[2] = new Room(23L, 180, 2, new Date(), "YellowSand", "Odessa");
+        rooms[3] = new Room(24L, 500, 3, new Date(), "FunnyHolidays", "Stambul");
+        rooms[4] = new Room(25L, 300, 2, new Date(), "ShoPopaloResort", "Stambul");
     }
 
     @Override
@@ -24,5 +24,14 @@ public class TripAdvisorAPI implements API {
             }
         }
         return outRooms;
+    }
+
+    @Override
+    public Room[] getAllRoos() {
+        Room[] allRooms = new Room[rooms.length];
+        for (int i = 0; i < rooms.length; i++) {
+            allRooms[i] = rooms[i];
+        }
+        return allRooms;
     }
 }

@@ -6,11 +6,11 @@ public class GoogleAPI implements API {
     Room[] rooms = new Room[5];
 
     public GoogleAPI() {
-        rooms[0] = new Room(71L, 300, 2, new Date(), "FunnyHolidays", "Stambul");
-        rooms[1] = new Room(72L, 450, 3, new Date(), "SunClub", "Rome");
-        rooms[2] = new Room(73L, 180, 2, new Date(), "YellowSand", "Odessa");
-        rooms[3] = new Room(74L, 500, 3, new Date(), "FunnyHolidays", "Stambul");
-        rooms[4] = new Room(75L, 300, 2, new Date(), "ShoPopaloResort", "Stambul");
+        rooms[0] = new Room(31L, 300, 2, new Date(), "FunnyHolidays", "Stambul");
+        rooms[1] = new Room(32L, 450, 3, new Date(), "SunClub", "Rome");
+        rooms[2] = new Room(33L, 180, 2, new Date(), "YellowSand", "Odessa");
+        rooms[3] = new Room(34L, 500, 3, new Date(), "FunnyHolidays", "Stambul");
+        rooms[4] = new Room(35L, 300, 2, new Date(), "ShoPopaloResort", "Stambul");
     }
 
     @Override
@@ -24,5 +24,14 @@ public class GoogleAPI implements API {
             }
         }
         return outRooms;
+    }
+
+    @Override
+    public Room[] getAllRoos() {
+        Room[] allRooms = new Room[rooms.length];
+        for (int i = 0; i < rooms.length; i++) {
+            allRooms[i] = rooms[i];
+        }
+        return allRooms;
     }
 }

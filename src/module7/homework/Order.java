@@ -1,6 +1,6 @@
 package module7.homework;
 
-public class Order {
+public class Order implements Comparable<Order>{
     private long id;
     private int price;
     private Currency currency;
@@ -54,6 +54,12 @@ public class Order {
         result = 31 * result + shopIdentificator.hashCode();
         result = 31 * result + user.hashCode();
         return result;
+    }
+
+
+    @Override
+    public int compareTo(Order o) {
+        return this.getPrice()-o.getPrice();
     }
 
     public long getId() {

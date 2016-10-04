@@ -23,7 +23,7 @@ public class User {
                 ", lastName='" + lastName + '\'' +
                 ", city='" + city + '\'' +
                 ", balance=" + balance +
-                "}\n";
+                "}";
     }
 
     @Override

@@ -14,8 +14,10 @@ public class Main {
         User user8 = new User(8L, "Eighth", "Eight", "Lvov", 3000);
         User user9 = new User(9L, "Ninth", "Nine", "Lvov", 7000);
         User user10 = new User(10L, "Tenth", "Ten", "Odessa", 1000);
+        User user11 = new User(11L, "First", "One", "Yalta", 10000);
 
         Order order1 = new Order(1L, 750, Currency.UAH, "Iron", "Rozetka", user4);
+        Order order11 = new Order(11L, 750, Currency.UAH, "Iron", "Rozetka", user11);
         Order order2 = new Order(2L, 10, Currency.USD, "T-short", "Rozetka", user8);
         Order order3 = new Order(3L, 1700, Currency.UAH, "MP3 Player", "Rozetka", user5);
         Order order4 = new Order(4L, 2500, Currency.UAH, "Oven", "Eldorado", user9);
@@ -40,6 +42,7 @@ public class Main {
         users.add(user8);
         users.add(user9);
         users.add(user10);
+        users.add(user11);
 
         orders.add(order1);
         orders.add(order2);
@@ -51,6 +54,7 @@ public class Main {
         orders.add(order8);
         orders.add(order9);
         orders.add(order10);
+        orders.add(order11);
 
 //        System.out.println(users);
 //        System.out.println(orders);
@@ -59,7 +63,7 @@ public class Main {
         Comparator<Order> comparatorOrderPriceDecr = new Comparator<Order>() {
             @Override
             public int compare(Order o1, Order o2) {
-                return o2.getPrice() - o1.getPrice();
+                return Integer.compare(o2.getPrice(), o1.getPrice());
             }
         };
         orders.sort(comparatorOrderPriceDecr);
@@ -69,11 +73,9 @@ public class Main {
         Comparator<Order> comparatorOrderPriceIncr = new Comparator<Order>() {
             @Override
             public int compare(Order o1, Order o2) {
-                int res = o1.getPrice() - o2.getPrice();
-                if (res == 0) {
-                    return o1.getUser().getCity().compareTo(o2.getUser().getCity());
-                }
-                return res;
+                if (Integer.compare(o1.getPrice(), o2.getPrice()) != 0)
+                    return Integer.compare(o1.getPrice(), o2.getPrice());
+                else return o1.getUser().getCity().compareTo(o2.getUser().getCity());
             }
         };
         orders.sort(comparatorOrderPriceIncr);
@@ -152,4 +154,3 @@ public class Main {
         System.out.println("\nUsers which are separated by cities:\n" + result);
     }
 }
-

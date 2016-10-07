@@ -44,7 +44,7 @@ public class MainTask3 {
         // check if set contain Order where User’s lastName is - “Petrov”
         boolean flag1 = false;
         for (Order order : orderSet) {
-            if (order.getUser().getLastName() == "Petrov") {
+            if (order.getUser().getLastName().equals("Petrov")) {
                 flag1 = true;
                 break;
             }

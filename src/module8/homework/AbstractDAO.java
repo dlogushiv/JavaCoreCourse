@@ -12,4 +12,8 @@ public interface AbstractDAO<T> {
     void saveAll(List T);
 
     List<T> getList();
+
+    void deleteById(long id);
+
+    T get(long id);
 }

@@ -70,18 +70,28 @@ public class Utils {
     }
 
     public void uniqueCities(List<Order> list) {
-        // I think this method can not work without loop ((
         System.out.println("\n\tSeparate list for as many lists as many unique cities are in User");
-        Set<Order> set = new TreeSet<>(((o1, o2) -> o1.getUser().getCity().compareTo(o2.getUser().getCity())));
-        set.addAll(list);
-        List<Order> cities = new ArrayList<>(set);
-        int i = 0;
-        while (i < set.size()) {
-            String city = cities.get(i).getUser().getCity();
-            System.out.println((i + 1) + ") Orders from city " + city + ":");
-            list.stream().filter(order -> order.getUser().getCity().equals(city)).forEach(System.out::print);
-            i++;
-        }
+//        // variant 1 with loop
+//        Set<Order> set = new TreeSet<>(((o1, o2) -> o1.getUser().getCity().compareTo(o2.getUser().getCity())));
+//        set.addAll(list);
+//        List<Order> cities = new ArrayList<>(set);
+//        int i = 0;
+//        while (i < set.size()) {
+//            String city = cities.get(i).getUser().getCity();
+//            System.out.println((i + 1) + ") Orders from city " + city + ":");
+//            list.stream().filter(order -> order.getUser().getCity().equals(city)).forEach(System.out::print);
+//            i++;
+//        }
+
+//        // variant 2 with Map object
+//        Map<String, List<Order>> byCities = list.stream().collect(Collectors.groupingBy(order -> order.getUser().getCity()));
+//        System.out.println(byCities);
+
+//        // variant 3 without Map object
+        list.stream().collect(Collectors.groupingBy(order -> order.getUser().getCity())).forEach((k, v) -> {
+            System.out.println(k);
+            System.out.println(v);
+        });
     }
 
     public void userLastNameChecking(List<Order> list, String lastName) {

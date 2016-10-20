@@ -69,8 +69,8 @@ public class Main {
         test.cheapOrders(orders);
         test.ordersByCurrency(orders);
         test.uniqueCities(orders);
-        test.userLastNameChecking(orders,"Petrov");
-        test.userLastNameChecking(orders,"Four");
+        test.userLastNameChecking(orders, "Petrov");
+        test.userLastNameChecking(orders, "Four");
         System.out.println(test.onlyUAHOrders(orders));
     }
 }

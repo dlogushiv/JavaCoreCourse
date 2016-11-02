@@ -10,7 +10,7 @@ public class Task10_3 {
 
         try {
             user.getCity();
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
             System.out.println("Attention! An user is null!");
         }
     }
